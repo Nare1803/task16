@@ -159,13 +159,13 @@ private:
     }
 
     void foo(const std::string& input_file_name, const std::string& output_file_name) {
-	fileHandler ob(input_file_name,output_file_name);
+	FileHandler ob(input_file_name,output_file_name);
         std::vector<int> array = ob.read_array_from_file();
 
         if (sortingStrategy) {
             sortingStrategy->sort(array);
         } else {
-            std::cerr << "Sorting strategy not set:" << std::endl;
+            std::cout << "Sorting strategy not set:" << std::endl;
         }
 
         ob.save_array_to_file(array);
